@@ -1,0 +1,367 @@
+---> Programming language
+-- JAVA
+
+Data structues and Algorithms
+-----------------------------------------------------
+-Arrays
+-Linked Lists
+-Stacks
+-Queue
+-Heap
+-Hash
+-------------
+Binary tree
+Binary Search Tree
+
+-Hash Mapping
+
+Data Structures
+----------------------------
+--> Organising the data
+--> Store the data
+
+A data structure is anything which is easily accessable
+and update. as per the programmer
+
+----> Machine language ---> binary ---> 
+store ----> Memory location ---> JVM, PVM, Pointers(System Memory)
+
+data ---> variables ---> [A-Za-z _ ] [any words (uppper/lowercase) _ ]
+
+structure ===> design ----> storage --> access -> modify --> update
+
+why?
+
+Website 
+Desktop application
+Mobile application 
+Elctronic appliences
+
+----------------------------------------------------------------------------------------------------------------
+
+Arrays
+-----------
+--> Arrays are the memory locations of similar data-types (int,float,double,string)
+integers ===> number defination [0---n]
+(Decimals are not the integers)
+float ===> decimal (0.0 ------ 0.n) // banking, 10.35/- //memory --> 4bytes
+string ===> enclosed in ' ' or " " especially these are english letters/words
+double ====> decimals (10325.54) // 8bytes
+boolean ====> false/true
+
+Syntax:
+-----------
+How to define an array
+
+datatype <var-name> [];
+or
+datatype[] <var-name>;
+example:
+int even_numbers[]; // Valid arrat declaration
+
+class example
+{
+public static void main(string[] args)
+{
+    //declare an array of integers.
+    int arr[]; //dataype is Integer
+    //allocate the values 
+    arr=new int[5]; //[]--? to store the values 
+    //Iitialize the elements --> 5 elements 
+    //first element -- value
+    arr[0]=10;
+    //second element
+    arr[1]=20;
+    //third elemnt
+    arr[2]=30;
+    arr[3]=40;
+    arr[4]=50;
+}
+}
+
+Why?
+--------
+1. to store multiple items  -----> int a = 100; //only a data is stored
+			  int b = 200; // Another memory gets stored
+2. This makes it easier to calculate the positions of each elements
+simple adding an offset to a base value
+
+add two numbers 
+int a=100;
+int b=200;
+system.out.println(a+b); // 300
+100 200 // Single line 
+300
+3. Contiguous memory allocation (Assending order) // Calloc //malloc
+0 1 2 3 4 5 .... n 
+public class Arrays {
+	public static void main(String[] args) {
+		//declare an array 
+		//int array_define[];		
+		int[] array_define = new int[5]; // One Dimensional Array		
+		// allocating memory
+		//array_define=new int[5]; // how many elements that you want to store		
+		// Initialize --> assigning the values 
+		array_define[0]=10; //first value
+		array_define[1]=20; //second value
+		array_define[2]=30; //third value
+		array_define[3]=40; //fourth value
+		array_define[4]=50; //fifth value
+		//loop --> iterations --> single 
+		for (int i=0;i<array_define.length;i++)
+		System.out.println("Elements at index " + i + ":" + array_define[i]);		
+		System.out.println("-------------String Array-------------------------");		
+		// declare the array
+		String Student[];		
+		Student=new String[5];
+		Student[0]="Sachin";
+		Student[1]="Bangalore";
+		Student[2]="Bidar";
+		Student[3]="Surya";
+		Student[4]="Sandeep";		
+		for(int k=0; k<Student.length;k++) {
+			System.out.println("Elements at index " + k + ":" + Student[k]);
+			}		
+	}
+}
+
+second type : MultiDimentional Arrays
+----------------------------------------------------------
+using more number of arrays at the same time
+
+int array_define[][]={{1,2,3} , {4,5,6} , {7,8,9} };
+
+String array_def[][]={{'Sachin'},{'Bangalore'},{'Bidar'},{'Surya'},{'Sandeep'}};
+
+
+Dynamic input to the array
+----------------------------------------
+input has to be provide by the user
+runtime 
+
+predefined Java-utility 
+Scanner
+------------> Enter the inputs
+import java.util.Scanner
+
+System.out.println
+("enter the size")
+5 : ---> 10,20,30,40,50
+int arr[5]={10,20,30,40,50}
+scanner <object> = new Scanner(system.in) //Scanf ("%d")
+//TO store 
+int <anything> variable = <object>.nextInt()
+10 20 30 40 50
+int <array-name> = new int [<object>]
+
+int array [5] ={10,20,30,40,50}
+for (int i=0;i<object>;i++)
+{
+   array[i]=in.nextint(); //int
+}
+Arrays.tostring(array) //string
+import java.util.Arrays
+
+15mis 
+-----------
+syntax:
+for each loop
+for(<datatype> : <defined variable>)
+for (int item : array)
+array = {1,2,3,4,5}
+item = {1,2,3,4,5}
+System.out.println(item)
+a=100
+ath value 100 : valid
+a is equal to 100 : invalid : programming
+-----------------------------------------------------------------------------------------------------
+
+
+
+
+If you have Small Patience you become good Programmer
+Patience towards good direction -- get the things done.
+dump machine ---> an instructions --> idle 
+master in giving instructions
+learn from the erros:---> 
+Practice to the power n makes you perfect
+
+2) Linked List 
+------------------------
+A linked list is a lenear datastructure, in which the elements
+are not stored in contiguos memory locations. 
+The elements in a linked list are linked using pointers
+
+Types of Linked lists
+1. Single Linked List
+2. Double Linked List
+3. Circular Linked List
+
+Introduction to the Single Linked List
+
+Head ----> data | Memeoy -----> data | Memory -----> data | Memory--------> Null
+Head Node is represents the start of List
+Null Pointer represents the End of the list
+pointer => Memory Locator
+
+Why? 
+1. Arrays can be used to store linear data of similar types, but
+arrays have set of limitations
+2) The size of the arrays is fixed: So we must know the upper limit 
+on the number of elements in advance ex: 5
+also, Generally the allocated memory is equal to limit irrespective of
+the usage
+3) Inserting a new element in an array of elements is expensive.
+beacuse the memory (room) has to be created for new elements 
+and create another room for existing elements have to be shifted.
+
+id[] = {100,200,300,400,500}
+105
+id[]={100,105,200,300,400,500}
+
+>> Linked list.
+Dynamic Size --> JVM 
+Ease of insertion and deletion
+
+Drawbacks
+-------------------
+1. Random acces is not allowed. We ahve to access elements
+sequentially, Starting from the head head node
+
+Note: Binary Searchnis not possible with linked list
+
+2) Extra memory space for poiner --> Memory
+3) Not Cache memory friendly. 
+------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+programming -- functions
+oops ----------------> Methods 
+<function name> () ---> function // method 
+add()
+insert()
+specific tast 
+sum(10,20) ---> 30
+ 
+-------------------------------------------------------------------------------------------------------------------
+public class DoubleLinkedList {
+	
+	Node head;	
+	class Node{
+		int data;
+		Node prev;
+		Node next;
+		
+		Node(int d){data=d;}
+	}
+	public void push(int new_data) {
+	Node new_node = new Node(new_data);	//Memory allocation 
+	//Make sure of new node as head and previous as NULL
+	new_node.next=head;
+	new_node.prev=null;
+	
+	// Change the previous of head node to new node
+	if(head !=null)
+		head.prev= new_node;	
+	//Move the head to the new node
+	head = new_node;
+}
+
+//Given a node as Prev_Node, insert a new node after the given node
+public void InsertAfter(Node prev_node,int new_data)
+{
+	if(prev_node == null) {
+		System.out.println("The given previous node should not be null");
+		return;
+	}
+	//Allocate he node and put the data
+	Node new_node = new Node(new_data);
+	
+	//Make the next of prev_node as new node
+	prev_node.next=new_node;
+	
+	
+	//Make prev_node as previous memory of new node 
+	new_node.prev=prev_node;
+			
+	//Change previous of new_node's next node 
+	if(new_node.next != null) {
+		new_node.next.prev=new_node;
+	}
+}
+	void append(int new_data)
+	{
+		//allocate the node and put the data
+		Node new_node = new Node(new_data);
+		Node last = head; 
+		
+		//If its a last node 
+		new_node.next = null;
+		
+		if(head == null)
+		{
+			new_node.prev=null;
+			head=new_node;
+			return;
+		}
+	}
+		
+		//Print the contents of the linked list
+		public void printlist(Node node)
+		{
+			Node last = null;
+			System.out.println("Traversal in forward direction");
+			while (node != null)
+			{
+				System.out.println(node.data);
+				last = node;
+				node = node.next;
+			}
+			System.out.println("Traversal in reverse direction");
+			while(last != null)
+			{
+				System.out.println(last.data);
+				last=last.prev;
+			}
+		}
+	public static void main(String[] args) {
+		DoubleLinkedList DLL = new DoubleLinkedList();
+		//inserting value as 60 ----> 60 --> null
+		DLL.append(60);
+		//inserting value as 50 ----> 50---> 60--> null
+		DLL.push(50);
+		//inserting value as 40 ----> 40--->50---> 60--> null
+		DLL.push(40);
+		//inserting value as 30 ----> 30--->40----->50---> 60--> null
+		DLL.append(30);
+		//inserting value as 20-->30-->40---> 50 ----> 50---> 60--> null
+		DLL.InsertAfter(DLL.head.next,20);
+		
+		DLL.printlist(DLL.head);
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

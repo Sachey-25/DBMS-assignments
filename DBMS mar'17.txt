@@ -1,0 +1,518 @@
+Dependencies
+------------------------
+1. Functional Dependency
+2. Fully-Function Dependency
+3. Transitive Dependency
+4. MultiValued Dependency
+5. Partial Dependency.
+
+Functional Dependecy
+----------------------------------
+-- If the information stored in a table can uniquely determine
+another information in the same table, It is called Functional 
+Dependency. 
+
+Emp_id        Emp_Name          Emp_Age
+E01              Amit                    28
+E02              Rohit                   28
+
+in the above table, EmpName is functionally dependent on 
+Emp_id-------> Emp_Name :----> Functional Dependency.
+
+Emp_Name ----> Emp_id
+Emp_id --------------> Emp_Name
+
+single information ---> functional dependecy 
+
+2. Fully-functional Dependency
+------------------------------------------------
+----> An attribute is fully functional dependent on another attribute.It is
+functionally dependent on that attribute and not an any of its proper subset.
+
+project id       Project cost    empid       project id     days
+001                 1000                E099         001               320
+002                 5000                E056         002               190
+
+relation table 
+------------------
+emp_id,projectid,projectCost,days
+
+fully functional dependency
+------------------------------------------
+{Emp_id,Project_ID}----> {days}
+
+3. Transitive Dependency
+----------------------------------------
+When an Inditect relationship cause functiaonl dependency, it called 
+transitive dependency
+
+if P--->Q and Q--->R is true then P---->R i.e the transitive dependency.
+
+Emp_id      Emp_name   Emp_pin      Emp_state     emp_city
+001            Sachin          585414      Karnataka      	Bidar
+002            Sachi         585415         Karnatak      	Bida
+003            Sach          585416         Karnata      	Bid
+004            Sac         	585417            Karnat    	Bi
+005            Sa         585418              Karna     	B
+P
+{emp_id}
+P---->Q
+{emp_id},{emp_name}
+P--->Q---R
+{emp_id}-----> {Emp_Name}----> {Emp_pin} -----> P---->R
+{Emp_id--->Emp_name--->Emp_pin--->Emp_state} ----> P--->S
+{Emp_id--->Emp_name--->Emp_pin--->Emp_state---->Emp_City} P---->T
+
+
+Particial Dependency
+--------------------------------
+Partial dependency occurs when a non prime attribute is functionally 
+dependent on part of a candidate key. 
+Note: The 2nd Normal Form (2Nf) elimanated the partial dependency.
+
+student Id    Project No      StudentName      ProjectName
+S01                 199                 Sachin                   Developing
+S01                  200                Aishwarya             Testing
+In the above tab;e, we ahve partical dependency. 
+
+The prime ket attribute are student ID and Project No
+Non prime keys are Student name and Project Name
+
+The student Name ca n be determined by Student ID that makes relation Partial
+Dependent
+The ProjectName can be determined by Project No  that makes relation Partial
+Dependent
+
+Multivalued Dependency
+--------------------------------------
+4NF
+When existence of one or more rows in a table implies one or more other 
+rows in the same table. then the multi-valued dependency occurs.
+
+P-->-->Q // Muliti-value present and the relations between the data 
+Q--->-->R
+
+
+---------------------------------------------------------------------------------------------------------------------
+Join Operations
+
+- A join Operation combines related tuples from different relations. 
+If and only if a given join condition is satisfied. it denoted by sybmol of infinity
+
+Join Opertions
+----------------------
+1. Natural Join
+2. Outer Join ----------> 1. Left Outer Join 2. Right Outer Join 3. Full Outer Join.
+3. Equal Join
+
+1. Natural Join
+------------------------
+- A natural Join is the set of tuples of all combinations in R and S that are 
+equal on their common attribute names. 
+-- It is Denoted "infinite symbol"
+
+Example: Employee and Salary table            _
+Input: | | Emp_Name, Salary (Employee |><| Salary) , Primary key -- Emp_id
+Emp_Name
+Sachin                    
+Priya                
+Nandini            
+Surya               
+
+Salary
+1000
+2000
+3000
+4000
+Output: Emp_name salary
+Emp_Name            Salary
+Sachin                     1000
+Priya                        2000
+Nandini                   3000
+Surya                       4000
+
+2. Outer Join 
+-----------------------
+- The outer join operation is an extension of the join operation. It is used to 
+deal with missing information.
+
+-- An outer join basically of three types
+2.1 Left Outer Join
+---------------------------
+- Left outer join contains the set of tuples of all combinations in R and S that
+are equal to their common attribute names. 
+- In the left outer join, Tuples in R have no matching tuples in S.
+-  it is also denoted by |><|
+
+2.2 Right Outer Join 
+------------------------------
+- Right outer join contains the set of tuples of all combinations in R and S that
+are equal to their common attribute names
+- In right outer join Tuples in S have no matching tuples in R.
+
+2.3. Full Outer Join
+-------------------------
+- Full outer join is like a left or right join except it contains all rows 
+from both table. 
+- In full Outer Join, Tuples in R that have no Matching tuples in S tuples. 
+that have no matching tuples in R. in thrie common attribute name. 
+- it is denoted as  
+
+3. Equi Join -- (Inner Join)
+-----------------------------------------
+- It is also known as inner join. It is the most common join. It is based on 
+Matched data as per the equality condition, the equi join uses the 
+comparision operator (=).
+
+Customer_Realtion
+Class Id                    Name
+1		Sachin
+2		Diksha
+3		Rahul
+
+Product_information
+Product ID              City
+1                              Bangalore
+2                              Delhi
+3                              Bangalore
+
+On Equi join Operation : |><|
+Class ID          Name         Product ID        City
+1                     Sachin            1                    Bangalore
+2                     Diksha           2                     Delhi
+3                     Rahul             3                     Bangalore
+--------------------------------------------------------------------------------------------------------------------
+
+RDBMS -- Relational Database management system. 
+
+1. Mysql 
+2. Sql Server
+3. PostgreSql
+4. Oracle 11g
+5. DB2
+6. MS Access -- MS office - Application
+
+
+SQL 
+------ 
+Structured Query Language,
+is used to perform operation on the records, stored in the database. 
+such operations are 1. Updating the record 2. Deleting the record
+3. Creating the record and 4. Modifying the record. 
+
+SQL is a just  a query language ; It is not a database. 
+- to perform Sql queries, you need to install any 
+database for example: Mysql, Oracle, PostgreSQL,DB2,Sql Server, 
+MongoDB 
+
+>>> What exactly is the SQL 
+--------------------------------------------
+1. Sql Stands for Structural Query language. 
+2. It is designed for managing the data in a 
+relational database management system
+3. It is prononaced as S-Q-L or sometime see-Qwell
+4. SQL is a databse language, it is used for database creartion, 
+deletion, fetching the data such as rows and modifying the rows.
+5. SQL is based on realtional algebra and tuple relation calculus. 
+
+>> Why SQL is required.
+1. To create new database, tables and views
+2. To insert record in the database.
+3. TO update records in a database.
+4. To delete records from a database.
+5. to retrieve data from a database.
+
+realtional algebra
+-----------------------------
+- Realtional algebra is a procedural query language. It gives a step
+by step process to obtain the result of the query. 
+it uses operators to perform queries.
+
+Relational Operators
+-------------------------------
+1. Select Operation
+2. Project Operation
+3. Union Operation
+4. Set Intersection
+5. Set Difference 
+6. Cartesian Product
+7. Rename Operation
+
+1. Select Operation
+-------------------------------
+The select Operation selects the tuples that satify a given predict. 
+it is denoted as sigma 
+
+Notation sigma p(r)
+where as:
+sigma :--> Used for selection Prediction
+r :---> Used for relation
+p :--> As Propositional logic formula which may be connectors like:
+AND OR and NOT. These relational can be used as relational 
+operators  like =,!=,>=,<=,<,> 
+
+Bank Table
+
+Branch_Name             Loan_No                    Amount
+Bangalore                       L17                            1000
+Dehli                              L20                             2000
+Hydrabad                       L22                             1500
+Mumbai                          L24                               900
+Kolkatta                          L26                             1200
+Kolkatta                          L27                             1400
+
+Input: --> SQL SERVER : Select from Bank Table Where Kolkatta="Loan No"
+rdbms
+Branch_Name = "Kolkatta" (Loan_No)
+
+Branch_Name             Loan_No                    Amount
+Kolkatta                          L26                             1200
+Kolkatta                          L27                             1400
+
+2. Project Operator
+------------------------------
+- This Operation shows the list of those attributes that we wish to
+appear in the result.         _
+- this is denoted by "Pi"   |  |
+
+Notation : "Pi" A1,A2,A3,.......An (r)
+Where as
+A1,A2,A3 is used as an attribute name of relation r.
+
+Example:
+----------------
+Customer_Relation
+---------------------------------
+Name                       Pin_Code                   City
+Sachin                       585414                     Bidar
+Rahul		560066                     Bangalore
+Diksha		110017                     New-delhi
+Arnav		226010                     Lucknow
+Akash		600044                     Chennai
+Hari		600046                     Chennai
+                                     
+Notation: 
+
+Input : "Pi" Name, City (Customer)				
+           "Pi" Name,Pincode(Customer)				
+
+3. Union Operaton
+------------------------------
+- Suppose there two tuples R and S . The union operation contains
+all the tuples that are either in R or S or Both in R & S. 
+
+- It eliminates the duplicate tuples. It is denoted 'U'				
+Notation : R U S		
+1. R and S must have the attribute of the same number 
+R == 5 
+S == 5
+2. Duplicates tuples are eliminated automatically. 
+
+4. Set Intersecton
+-------------------------------
+- Suppose there two tuples R and S . The Set Intersection
+ operation contains all the tuples that are both in R or S
+- it is denoted as inverse of letter "U"
+ 		
+5. Set - Difference
+----------------------------
+- Suppose there two tuples R and S . The Set difference
+ operation contains all the tuples that are in R but not in S
+- This is denoted with -
+
+R - S
+
+6. Cartesian Product
+-------------------------------
+
+- The cartesian product is used to combine each row in one table
+with each row in the another table. It is also know an Cross Product
+
+- It is denoted by X
+
+Notation : --< R X S , E X D
+
+7. Rename Operations:
+----------------------------------
+- The rename operation is used to rename the output relation. 
+it is denoted by rho (p) 				
+
+Example: p(Emplpoyee Table , <new name>)
+
+
+Select -- Keyword  // Select Operation
+Insert -- Keyword // Project Operation
+Delete -- Keyword  // union and intersection
+Modify -- Keyword. // Rename 
+
+Where --- // Set difference 
+--------------------------------------------------------------------------------------------------------
+
+Sql Rules
+--------------
+1. Structural query language is not case sensitive. Generally, Keywords
+of Sql are written in uppercase. 
+2. Statements of SQL are dependent on text liines. We can use a single
+Sql statement on one or multiple text line. 
+3. Using the SQL statements, You can perform most of the actions
+in a database.
+4. SQL depends on tuple relation algebra.
+
+SQL Process
+-------------------
+- When an Sql Command is ececuting for any RDBMS, then the syste, 
+figure out the best way to carry out request. 
+- and the SQL engine determines that how to interpret the task.
+
+- In the process, various components are included. 
+these components can be optimized engine, Query Engine,
+Query Dispatcher etc
+
+- All non -Sql queries are handled by the classic query engine, but SQL
+query engine won't handle logical files. 
+
+Working Procedure
+-----------------------------
+
+
+DBMS Sql Datatype
+------------------------------
+1. Binary Datatype
+2. Numeric Datatype
+3. Extract Numeric Datatype
+4. String Datatype
+5. Date Datatype
+
+1. Binary Datatype
+-----------------------------
+binary ---> It has max length of 8000 bytes. It contains fixed-length binary data
+varbinary--> I has maximum length of 8000 bytes.It contains variable-length data
+image---> It has maximum length of 2,147,483,647 bytes 
+
+2. Numeric Datatype
+----------------------------------
+float : --> from -1.79E + 308 to 1.79E + 308 ----> It is used to specify a floating point vale 6.3,3.14
+real :---> -3.04e + 38 to 3.40E + 38 --> It specify a single precision floating point number 0.1, 0.2 
+
+3. Exact numeric Datatype
+------------------------------------------
+int -----> it is used to specify an integer value
+smallint--> it is used to specify small integer value
+bit :----> It has a number of bits to store
+decimal :--> it is used to specify a numeric value that have a decimal number 
+numeric:--> It is used to specify a numeric value.
+
+4. Charecter string datatype
+-------------------------------------------
+char :-->maximum length 8000 characters. It contains fixed-length non-unicode
+varchar:--> maximum length 8000 charecters. it contains variable-length non-unicode
+text:--> maximum length  2,147,483,647it contains 
+variable-length non-unicode
+
+5. Date and Datetime Datatypes
+-----------------------------------------------
+date :--> It is used store the year,month and days value
+time:--> it is used to store the hour,minute and second value
+timestamp:--> it stores the year, month,day,hour,minute and the second value.
+
+---> DBMS SQL Commands
+-------------------------------------------
+= Sql Commands are instructions, It is used to communicate with the database.
+it is also used to perform specific taks, functions and queries of data.
+= Sql Can perfom various tasks like create,insert, drop and modify.
+
+Types of Sql commands
+DDL, DML, DCL, TCL and DQL
+Data Defination Language -------> Create, Drop, Alter, truncate
+Data Manipulation Language ---> Insert, Update and Delete
+Data Control Language ---> Grant, Invoke
+Transaction Control Language ---> Commit, RollBack and SavePoint
+Data Query language ---> Select 
+****************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

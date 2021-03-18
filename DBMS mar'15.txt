@@ -1,0 +1,396 @@
+RDBMS
+-----------
+---> Relational Database management system.
+
+DBMS 
+---------
+----> Database management system.
+data 
+------
+--> Data is also called as an information, it may be anything. 
+
+-----------> www.irctc.co.in ---> login ---> email and password captcha -->
+
+source: Bangalore (BLR)
+destination : Vijayawada (VJD)
+date of Journey : 25-03-2021
+
+search trains 
+
+
+
+SOurce : 
+Destination:
+doj : 
+bus details 
+
+
+Dominos
+--------------
+pizza: veg /non-veg
+medium small large
+spicy, cheesy
+
+
+pizza detials
+
+
+train details trains
+bus details bus
+pizza details pizza
+etc
+etc
+etc
+
+--------------> Realtional DBMS
+
+A relational database is a database model that stores the data in tables. 
+And these are interconnected on the relations. 
+
+train no -----------> train name --------> source ------> destination -- depart -- HOJ
+realating to RDB
+
+price:
+coke:
+price:
+ETA: 30mins 
+-------------------------------------------------------------------------------------------------------
+Data:------> Data can be anything of information, forms --> Server --> Database
+
+Table:----> Excel sheet -- MS Excel,
+
+A tabe is a data structure that organizes information into rows and columns,
+it can be used to both store and display data in a structured format.
+
+SQL ---> Input ---> row column 
+<table>
+<td> --> table data </td>
+     <tr> User Name </tr>
+     <tr> City </tr> 
+     <tr> Pin code </tr>
+     <tr> Sachin </tr>
+     <tr> Bidar </tr>
+     <tr> 585414 </tr>
+</table>
+
+<tr> ---> table row </tr>
+
+---------------------------------------
+username City   pincode
+---------------------------------------
+Sachin 	Bidar   585414 
+
+
+Row:-----> A row is a Horizontal group of values within a table. It contains
+values for multiple fileds which are defined by columns.
+
+
+Column:---> A column is virtical group og values within a table. It contains 
+values from a single field in mulitple rows.
+
+--- In databases columns may be defined as individual fields within a table. 
+Each field has a name, such as empId, EmpName,Adrress or PhoneNumber.
+
+Therefore, when mulitple values from a column are selected, They will all 
+have similiar information. 
+EmpName, Phone Number, City, Project 
+datatables of databses are called as speadsheet.
+
+Note: While it is easy to get rows and columns confused, Just remembe that
+columns are virtical and rows are horizontal.
+
+like your text or sentence -- rows
+
+Field:-----> A field is a user inferface element designed for entering data. 
+Many software applications inclue text fileds that allows you to provide input
+using your keyboard.
+
+Record:-----> A record is a database entry that contain one or more values.
+Group of records, are store in a table, which defines what type of data each
+record may contain.
+
+Note: Databases may contain multiple tables which may each contains 
+multiple records.
+
+DBMS : Database management System. 
+A DBMS is a databse program. It is a software system that uses a standard
+method of cataloging, retrirving, and running queries on data.
+
+-Features
+1. The DMBS manages incoming data
+2. DBMS Organises the data
+3. It Provides the ways fot the data to modofied or extracted by users or
+other programs.
+
+Some of DBMS are:
+MySQL  
+PostgreSql
+MS Access
+SQL Server
+Oracle
+RDBMS
+dBase
+
+Note: By default all the DBMS comes with ODBC(Open Database Connectivity)
+
+SELECT:----> Select is used to select data from a database.
+
+INSERT:---> When you want insert new data to the database.
+
+DROP/DELETE:---> When you want to delete/remove data from database
+
+Note: You need to be more concious whether its a data or database.
+
+employee table
+------------------------------------
+empName
+Sachin
+Sachin
+-----------------
+Syntax:
+-----
+DROP from <table table> WHERE empname=' '
+DROP from employeetable WHERE emplname='Sachin'
+DROP employeetable
+
+
+
+drop empployeetable.drop();
+
+Note: Null Values
+--------------------------
+A NULL values in a table, Is a value in a field that appears blank.
+Which means a field with a NULL value is a field with no value.
+
+Note: It is very important to understanf that a NULL value is different
+than a zero value or a field that contains spaces. 
+A field with a NULL value is the one that has been left blank during record 
+creation.
+
+int emp id, NULL  
+
+---------------------------------------------------------------------------------------------------
+SQL Constraints
+
+Constraints are the rules enforced on data columns on a table. 
+These are used to limit the type of data that can go into a table. 
+This ensures the accuracy and reliablity of the data in the database.
+
+1. NOT NULL Contraint ---> Ensures that a column cannot have a NULL value.
+2. DEFAULT Constraint ---> Provides a default value for a column when none is
+Specified.
+3. UNIQUE Constraint ---> Ensures that all the values in a column are different
+4. PRIMARY Key ---> Uniquely identifies each row/record in a database table.
+5. FOREIGN Key ---> Uniquely identifies a row/record in any another database table
+6. CHECK Constraint :--> The Check contraint ensures that all values in a column
+satisfy certain conditions
+7. INDEX ---> Used to create and retrieve data from the database very Quickly.
+
+SQL Query !!!!!!!!
+-----------------------
+CREATE TABLE <table_name>(); // Create a new table ---> row and columns --> fields
+
+#Null Constraint
+-----------------------------------
+create table Employee(
+	ID int NOT NULL,   /// I am not suppose to leave this info as blank.
+	name varchar (30), NULL //Even if i do not provide any info its all fine
+	designation varchar (20) NOT NULL,
+	city varchar (15),
+	address varchar(65),
+	salary int
+);
+
+NUll --> if you are not giving value on execution time
+NOT NULL --> You  must provide information/data
+
+
+run --> execute 
+Table created successfully........ 
+
+create table Employee(
+	ID int not null,
+	name varchar (30), 
+	designation varchar (20) NOT NULL,
+	city varchar (15),
+	address varchar(65),
+	salary int,
+	PRIMARY KEY (ID) // This is something has 
+		            //to be unique and no duplicated allowed
+);
+
+Insert -- new data delete/drop remove 
+
+modify ---> table information
+--------------------------------------------
+Alter table <table_name> modify <modifiable item> <data type of it> NOT NULL:
+ALTER table Employee MODIFY salary int NOT NULL;
+
+3. Default constraint
+-------------------------------
+create table Employee(
+	ID int not null,
+	name varchar (30), 
+	designation varchar (20) NOT NULL,
+	city varchar (15),
+	address varchar(65),
+	salary Decimal (12,2) DEFAULT 50000.00, // <whole number> . <wholenumber> 
+	PRIMARY KEY (ID) // This is something has 
+		            //to be unique and no duplicated allowed
+);
+
+4.UNIQUE Constraint
+-------------------------------
+create table Employee(
+	ID int not null,
+	name varchar (30), 
+	designation varchar (20) NOT NULL,
+	city varchar (15) NOT NULL UNIQUE,
+	pin_code int (8) NOT NULL UNIQUE,
+	address varchar(65),
+	salary Decimal (12,2) DEFAULT 50000.00, // <whole number> . <wholenumber> 
+	PRIMARY KEY (ID) // This is something has 
+		            //to be unique and no duplicated allowed
+);
+
+5. primary key
+------------------------
+create table Employee(
+	ID int not null,   0-9 
+	name varchar (30), 
+	designation varchar (20) NOT NULL,
+	city varchar (15) NOT NULL UNIQUE,
+	pin_code int (8) NOT NULL UNIQUE, 0-9
+	address varchar(65),
+	salary Decimal (12,2) DEFAULT 50000.00, // <whole number> . <wholenumber> 
+	PRIMARY KEY (ID) // This is something has 
+		            //to be unique and no duplicated allowed
+); 
+Note: Primary key should not be null......
+
+6) Foreign key
+----------------------
+
+Amazon 
+-------------
+Customer table
+catalog ......... product .........price ..........
+product id    woodland canvas shoes  2299/-
+15
+
+Order table
+-----------------
+product id
+product name
+price 
+
+
+----> Buyers ------> sellers
+
+
+CREATE table customer(
+	ID INT NOT NULL,
+	NAME VARCHAR,
+	AGE INT,
+	ADDRESS VARCHAR,
+	SALARY DECIMAL,
+	PRIMARY KEY (ID)
+);
+
+CREATE TABLE ORDERS(
+	ODER_ID  INT NOT NULL,
+	DATE DATETME,
+	customer_ID INT references customer(ID),
+	AMOUNT double,
+	PRIMARY KEY(ID)
+);
+
+
+Check Constraint
+--------------------------
+The Check constraint enables a condition to check the value being entered into a 
+record. if the condition evaluates to false, the record violates the constraint
+and isn't entered to the table.
+
+create table Employee(
+	ID int not null,   0-9 
+	name varchar (30), 
+	AGE int NOT NULL CHECK (AGE >= 18),
+	designation varchar (20) NOT NULL,
+	city varchar (15) NOT NULL UNIQUE,
+	pin_code int (8) NOT NULL UNIQUE, 0-9
+	address varchar(65),
+	salary Decimal (12,2) DEFAULT 50000.00, // <whole number> . <wholenumber> 
+	PRIMARY KEY (ID) // This is something has 
+		            //to be unique and no duplicated allowed
+); 
+ 
+
+7. INDEX Constraints
+-------------------------------
+The INDEX us used to create and retrieve data from the database very quickly. 
+An index can be created by using or grouo of columns in a table. When  the index
+is created, 
+
+create table Employee(
+	ID int not null,   0-9 
+	name varchar (30), 
+	AGE int NOT NULL CHECK (AGE >= 18),
+	designation varchar (20) NOT NULL,
+	city varchar (15) NOT NULL UNIQUE,
+	pin_code int (8) NOT NULL UNIQUE, 0-9
+	address varchar(65),
+	salary Decimal (12,2) DEFAULT 50000.00, // <whole number> . <wholenumber> 
+	PRIMARY KEY (ID) // This is something has 
+		            //to be unique and no duplicated allowed
+); 
+While altering the data from the table
+
+CREATE INDEX index_name on table_name (column1, column2, column3 ............ columnn);
+
+I want ot search the age information
+Create index idx_age on Employee (AGE ) -----> quickly able to fetch the age info...
+
+drop the indes constraint
+-------------------------------------
+ALTER table Employee DROP idex_AGE;
+
+--------------------------------------------------------------------------------------------------------------------------------
+Data Integrity
+---------------------
+The following categories of data integrity exist with each RDBMS
+1. Entity Integrity ----> There are no duplicate rows in a table
+2. Domain Integrity ----> Enforces valid entries for a given column by restricting
+the type, the format or the range of values
+3. Referential Integrity :---> Roes can not be deleted, which are used by other records
+4. User - Defined Integrity :----> Enforces some specific business rules that do not
+fall into entity domain or referential integrity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Base
+------
+Foundation, to hold......
+
+Note: We have different type of data and we also have various technologies
+to deal with it. 

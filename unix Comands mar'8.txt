@@ -1,0 +1,355 @@
+Unix Commands
+---------------------------
+echo :
+The echo command prints a string of a text to the terminal view
+
+Syntax: 
+echo "Any string that you wanted to print/ see on the screen"
+
+example:
+----------------
+echo "Hello World"
+echo "Programming is Fun"
+echo " We are learning Unix/Linux Commands
+echo "This will prints on the screen"
+
+--->The 'echo' command can show the value of environament variables
+  
+number_one=100
+number_two=200
+echo "The entered first number is $number_one "
+
+Note: We need to use $ whenever we need to get any information
+as a variable or any initialization done in the script. $ means
+All or everything!!!!
+
+2. echo is also used to check directory info, path info as well 
+echo $USER
+echo $HOME
+echo $PATH
+
+2) free
+------------
+The free command gives you a summary of the memory usage
+with your computer. 
+It does this for the RAM and swap memory 
+free -h (human) --> this is option is used to provide human-friendly 
+numbers and units. Withiout this option the figures are presented in
+the bytes.
+
+21) ifconfig :---> Show and set IP addresses of the system 
+sudo apt-get install ifconfig ---> ubuntu
+sudo yum install ifconfig --------> redhat
+
+2) netstat -- show network stats and routing information
+
+23) ip ---> Check if remote host id reachable 
+
+remote access commands
+------------------------------------------
+ssh ---> remote local server (server repository
+telnet -- clear text remote access protocol
+
+sudo apt-get install <package name>
+----> linux repositoty 
+
+file transfer commands
+---------------------------------------
+1. ftp :---> File Transfer Protocol client
+2. sftp :---> secure version of FTP (Secure file transfer protocol)
+3. scp :---> secure virsion of FTP
+4. wget :---> download files from remote servers, http/https/ftp
+
+wget
+--------
+syntax:
+
+wget [oprions] [url]
+man wget
+-------------------------------------------------------------------------------------------------
+3) grep
+---------
+the grep utility seachers for lines which contain a serach pattern.
+when we looked at the alias command, we use grep to search through
+the output of another program.
+
+syntax
+-------
+grep <name of the file * > <extension>
+example 
+grep sample *.txt
+
+sudo yum install grep --> redhat linux
+sudo apt get install grep --> ubuntu
+
+password : Continue the correct password trusting the terminal
+
+4) alias
+-------------
+The alias commands lets you give your name to a command
+or sequence of commands. 
+You can type your short name, and the shell will execute
+command or sequence of commands for you. 
+
+alias cls=clear
+alias ls="list of the files"
+
+5) curl
+---------
+the curl command is a tool to retrieve information and files 
+from Uniform Resource Locators (URL) or internet access
+
+--> The curl command may not be provided as a standard part of 
+the linux distribution. So we need to get it installed on our
+machine. 
+
+sudo apt-get install curl --> ubuntu 
+sudo yum install curl --> Redhat
+
+example:
+curl <url>
+curl https://www.google.co.in
+curl https://www.gmail.com
+curl https://www.facebook.com
+
+curl https://www.github.com
+
+
+6) groups
+-----------
+The groups command tells you which groups a user is a member of
+or belong to.
+
+syntax:
+groups <name of the member>
+groups sachin
+
+
+7) gzip 
+---------
+the gzip command compresses the files. By default, it removes
+the origanl file and leaves you with the compressed version. 
+To obtain both the original and the compressed version. 
+
+Note : Use the -k(keep) option 
+
+syntax:
+gzip -k <file the you wanted to compress>
+gzip -k sachin-newfile
+
+
+8) head
+---------
+the head command gives pu a listing of the first 10 lines of a file. 
+if you want to see fewer or more lines use -n (number). 
+
+
+Syntax:
+-------
+head <name of the file>
+head sachin-newfile
+
+Note: By default head command gives the first 10 lines. 
+if i want to more number of lines
+Syntax:
+-----------
+head -n <name of the file>
+
+9) kill
+-----------
+The kill command allows you to terminate a process from the 
+command line. You will do this by providing the process id (PID)
+of the process. 
+
+How to get the PID --- > ps -e
+kill PID <Number of the PID>
+
+Note: You need to be more causious to close the PID
+
+
+10) less 
+---------
+the less command allows you to view the files without a editor.
+It is faster to use. 
+---> With less you can scroll forward and backward through the file
+using the UP and Down arrow keys, The PgUp and Pgdn keys and the End Keys.
+--> Press the Q key to quit from less. 
+
+syntax:
+less <name of the file>
+
+example:
+--------
+less sachin-newfile
+
+11) ping
+----------
+The ping command lets you verify that you have network connectivity 
+with another network device. 
+syntax:
+-------
+1) ping <ip address>
+2) ping <web link>
+
+ping 192.168.0.1
+ping 192.168.0.0
+
+12) ps command
+---------------
+The ps command lits runnign processes. Using ps without any options
+causes it to list the processes ruiing in the current shell.
+
+Command
+--------
+ps
+
+13) shutdown
+-------------
+The shutdown command lets you shutdown or reboot your linux system.
+
+14) shutdown now
+-----------------
+To shutdown immediately.
+
+15) shutdown +15 
+-----------------
+shutting down in 15 minutes
+
+16) SSH 
+--------
+Use ssh command to make a connection to a remote linux computer and log
+into your account. To make a connection you must provide your user name 
+and the ip address 
+
+17) uname
+----------
+You obtain some system information regrading the linux computer.
+
+1) uname -a -----> all (you can see everything)
+2) uname -s ------> Kernel name 
+3) uname -r ---> kernel released
+4) uname -v (kernel version)
+
+21) ifconfig :---> Show and set IP addresses of the system 
+sudo apt-get install ifconfig ---> ubuntu
+sudo yum install ifconfig --------> redhat
+
+2) netstat -- show network stats and routing information
+
+23) ip ---> Check if remote host id reachable 
+
+remote access commands
+------------------------------------------
+ssh ---> remote local server (server repository
+telnet -- clear text remote access protocol
+
+sudo apt-get install <package name>
+----> linux repositoty 
+
+file transfer commands
+---------------------------------------
+1. ftp :---> File Transfer Protocol client
+2. sftp :---> secure version of FTP (Secure file transfer protocol)
+3. scp :---> secure virsion of FTP
+4. wget :---> download files from remote servers, http/https/ftp
+
+wget
+--------
+syntax:
+
+wget [oprions] [url]
+man wget
+
+1> Download a file to a specific directory
+---------------------------------------------
+Syntax:
+--------
+wget -p <url>
+wget -p /mnt/iso http://mirrors.mit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal
+
+2> Limiting the download speed
+-------------------------------
+wget --limit-rate=1m https://d1.google.com/go/go1.10.3.linux-amd64.tar.gz
+
+3) Download in the background
+------------------------------
+wget -b <downloadable link>
+
+4) Download multiple files
+----------------------------
+wget -i
+
+sort
+------
+---> Sort a file in assending order 
+
+sort <name of the file>
+sort sachin-newfile ---> Asscending order
+
+sort -r <name of the file> --> Decending Order
+
+export
+-------
+To view oracle related enviornment variable
+
+export | grep Oracle
+
+service command
+----------------
+Service command is used to run the system V init
+scripts. ie., instead of calling the script
+located in the /etc/init.d/directory with their
+suitable path, you can use the service command.
+
+service ssh status
+
+#Check the status of all the services
+service --status-all
+
+#Restart a service
+------------------
+service ssh restart
+
+Top
+----
+Top command is used to display the top processes in 
+the system.
+ 
+ifconfig  is used to congifure the kernel-resident netword inerface.
+it is used at boot time to set up inteface as necessary.
+
+ifconfig
+eth0
+lo
+
+1. How to disable an interface
+------------------------------
+ifconfig eth0 down
+
+2. How to enable an interface
+------------------------------
+ifconfig eth0 up
+
+3. Assign IP address to an interface
+IP 192.168.1.12
+
+ifconfig eth0 192.168.1.12
+
+4. Change Subnet mask of Interface eth0
+-----------------------------------------
+ifconfig eth0 netmask 255.255.255.<0-255
+
+netstat
+----------
+list all network ports
+
+netstat -a 
+port : https://localhost:4200
+
+list all the TCP
+-----------------
+netstat -at
+
+Show Statistics for all ports
+------------------------------
+netstat -s 

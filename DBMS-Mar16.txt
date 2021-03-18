@@ -1,0 +1,363 @@
+Difference between DBMS and RDBMS
+-------------------------------------------------------------
+DBMS 			RDBMS
+1. DBMS applications store	1. RDBMS application
+the data as file.                         store the data in a tabular form
+2. In DBMS, data is generally    2. In RBMS, the tables have an identifier
+stored in either a hierarchical  called primary key and data valus are stored
+for or a navigational form        in the form of tables.
+3. Normalization is not 	3. Normalization is present in RDBMS
+present in DBMS
+4. DBMS does not apply	4. RDBMS defines the integrity constraint for the 
+any security wiht regards to    purpose of ACID 
+data manipulation                 (Automocity,Consistence, Isolation and Durability)
+			property.
+5. DBMS uses file system to 	5. In RDBMS, data values are stored on the form
+store the data, so there will     tables, so a relationship between these data values
+be no realtion between            will be stored in the form of table.
+the tables. 
+6. DBMS has to provide some   6. RDBMS system supports a tabular structure of 
+uniform methods to access           the data and a relationship them to access the
+the stored information. 	     stored information
+7. DBMS does not support	7. RDBMS supports distributed database
+distributed databse.			
+8. DBMS is meant to be for       8. RDBMS is designed to handle large amount 
+small organisatio and deal           of data. it supports multiple users
+with small data, it supports 
+for single user
+9. Examples of DBMS are file    9. Example of RDBMS are mysql, Postgre, Sql Server 
+system, xml etc                            oracle, IBM DB2 etc..
+--------------------------------------------------------------------------------------------------------------------------------
+
+DBMS Normalizations
+---------------------------------
+- Normalization is the process of organizing the data in the database.
+- Normalization is used to minimize the redundancy from a relation or 
+set of relations, It is used to elimanate the undesirable charecteristics 
+like insertion, Update and delition anomalies.
+- Normalization devides the larger table into the smaller table and links them using
+relationship.
+- The normal form is used to reduce redundancy from the database table.
+
+
+1NF----> A relation is in 1NF if it contains an atomic value.
+2NF ---> A relation will be in 2NF, if it is in 1NF and all non-key attributes are 
+fully functional dependent on the primary key
+3NF---> A realtion will be in 3NF, if it is 2NF and no transition dependency exits
+4NF----> A realtion will be in 4NF, if it is in Boyce Codd normal form and has
+no multi-valued dependency. 
+5NF----> A relation will be in 5NF, if it is in 4NF and not contains any join dependency
+and joining should be lossless.
+
+First Normal form (1NF)
+--------------------------------------
+data
+table
+data and the table are related themselves, RDMBS 
+
+-- relation will be in 1NF, if it contains an atomic value.
+-- It states that an attribute of a table cannot hold multiple values. it must hold 
+only single valued attribute.
+-- First normal form disallows the multi-valued attribute, composite attribute
+and their combinations. 
+
+example: realtional Employee ----> is not a 1NF, Bacause of multi-valued attribute
+
+id -------------------------------> 12345
+name --------------------------> Sachin
+age------------------------------> 27
+salary---------------------------> 10000
+phone_number ------------> two to three phone numbers (possibility)
+email ------------------------------> 
+---> 1NF concept fails 
+
+
+2. Second Normal form
+------------------------------------
+---- In the 2NF, relation must be in 1NF.
+---- In second normal form, all non-key attributes are fully functional dependent 
+on the primary key, 
+
+Create table Employee (
+	emp_id int,
+	emp_name varchar (20) not null,
+	emp_age int not null,
+	primary key emp_id
+);
+
+3. Third Normal Form (3NF)
+------------------------------------------
+- A relation will be 3nf, If it is in 2NF and not contain and 
+transitive partial dependency.
+- #3NF is used to reduce the data duplication, It is also to achieve 
+	the data integrity
+- If there is no transitive dependency for non-prime attributes, the the relation
+must be oin third normal form.
+
+---->A relation is in third normal form if it holfs atleast one of following condition,
+for every non-trival function dependency.
+X ---> Y.
+
+x ===> Is super key.
+Y ===> is a prime attribute, i.e, each element of Y is part of some candidate key.
+
+example:
+-------------
+Emp_ID	Emp_Name	Emp_Pincode	Emp_State	Emp_City
+222	Diksha	110017	DL	NewDelhi
+333	Surya	503001	TS	Hydrabad
+444	Apurva	831019	JH	Jemshedpur
+555	Deekshika	500015	TS	Hydrabad
+666	Priya	505405	TS	KareemNagar
+Superkeys in the above table				
+{Emp_id},
+{Emp_ID,Emp_Name},
+{Emp_ID,Emp_Name,Emp_Pincode},
+{Emp_ID,Emp_Name,Emp_Pincode, Emp_State},
+{Emp_ID,Emp_Name,Emp_Pincode, Emp_State,Emp_City},
+
+Candidate key =====> {Emp_id}								
+
+dependency ---> any attribute is going relate absolutely. 
+
+emp id -----> emp_name
+1234 ------> Sachin 
+5678 ---> Rahul 
+
+- Partial dependency --- > occures when a nonprime attribute is functionally
+dependent on part of a candidate key. 
+The 2nf elimanates the particial dependency.
+
+student-table
+
+Student-Id         ProjectNo             StudentName            ProjectName
+S01                   199                       Rishikesh                  Website-Design
+S02                   200                       Sachin                       RDBMS-data anyalazation 
+
+in the above table, We have partial dependency, 
+The prime key attributes are student-ID and Project-No
+As stated, The non-prime attributes i.e Student Name and Project Name should
+be funtinallay dependent on  part of candidate key, to be partial dependent.
+
+The studentName can be determined by StudentID that makes the relation partial
+Dependent
+The ProjectName can be determined by ProjectID, which that the relation partial
+dependent.
+Select Student-Id from student-table 
+select Student-Name from student-table ---> only student name 
+
+--------------------------------------------------------------------------------------------------------------------------
+BCNF ---> Boyce Codd Normal Form
+1. BCNF is the advanced version of 3NF. It is stricter than 3NF
+2. A table is in BCNF if every functional dependency X----->Y, X is the superkey 
+of the table. 
+3. For BCNF, the table should be in 3NF, and for every Values, LHS is super Key.
+
+Employees working for multiple departments
+----------------------------------------------------------------------
+Sachin ----> Developing and Testing
+
+Akash ----> Web design and Development 
+
+For developing -- we have different department  --> dept type dept no 
+For testing -- we have another different department 
+
+for web design and developement -- we have different department
+
+Relational Decompositon
+----------------------------------------
+- When a relation in the reational model is not in appropriate normal form then
+the decomposition of relation is required. 
+- In a database, it breaks the table into multiple tables.
+- If the relation has no proper decomposition, the it may lead to problems
+like loss of information.
+- Decomposition is used to elimate some of the problem like 
+Bad design of anomolies, Inconsistance and redundancy.
+
+Types of Decompostions
+
+1. Lossless Decomposition
+2. Dependency Preserving. 
+
+
+1. Lossless Decomposition
+
+- If the information is not lost from the relation that is decomposed, then the
+decomposition is called lossless. 
+- The lossless decomposition guarentees that the join of relations will result 
+in the same relation as it was decomposed.
+- The relation is said to be lossless decomposition if natual joins of all the 
+decomposition five original relation. 
+
+2. Dependency Preserving. 
+--------------------------------------------
+-- It is an important constraint of the database. 
+-- In the dependency preserving, at least one decomposed table must satisfy
+every dependency. 
+-- For example, Suppose there is a relation R(A,B,C,D) with function dependency
+set (A-->BC), the realtion R is decomposed to R1(ABC) and R2(AD). Which is 
+dependency preserving beacuse A--->BC is a part of realtion R1(ABC)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+----> Miltivalued Dependency(relation)
+--------------------------------------------------------
+
+- Mulitivalued dependency occurs when two attributes in a table are independent
+of each other, But both depend on a third attribute.
+- A multivalued dependency consists of atleast two attributes that are dependent on 
+third attribute that's why it always requires at least three attributes.
+
+Example:
+
+
+--- Realational Model Concept
+----------------------------------------------
+Relational Model can represent as a table with columsn and rows, Each row is 
+known as tuple, Each table of column has a name or attribute
+
+Domain: It contains a set of atomic values an attribute can take. 
+
+Attribute : It contains the name of column in a particular table. Each attribute
+must have domain, dom(Ai)
+
+Relational Instance :---> In the relationa database system, The relational instance
+is represented by a set of tuples. Relation instance do not have duplicate tuples.
+
+Realtion Schema:---> A relations Schema contains the name of the relation 
+and name of all columns or attributes.
+
+Realtional Key :--> In the relational key, Each row has one or more attributes. 
+It can identofy the row in the relation uniquely.
+
+Student Table				
+Name	Roll_NO	Phone_No	City	Age
+Diksha	14567	213453222	Delhi		t1
+Sandeep	12678	323456324	Hydrabad		t2
+Rahul	14356	234522456	Bangalore		t3
+Apurva	15879	244244245	Jemshedpur	t4
+Priya	12445	135245774	KarimNagar	t5
+Rishikesh	14876	467845684	Nanded		t6
+				
+In the given table, Name, Roll_No,Phone_No and City are the attributes				
+The instance of Schema Student has 4 tuples				
+				
+t4=<Apurva, 15879,244244245,Jemshedpur>				
+-------------------------------------------------------------------------------------------------------------------------------
+
+4. Fourth Normal form(4NF)
+--------------------------------------------
+A realtion will in 4NF, if it is in Boyce Codd Normal Form and has no
+multi-valued dependency
+
+- for a dependency A---> B if for a single value of A, Multiple values of B exits. 
+then the relation will a multi-valued dependecy.
+
+5. Fifth Normal Form(5Nf)
+------------------------------------------
+A relation is in 5NF , If is in 4NF but not contains any join dependency
+and joining should she lossless.
+- 5NF is satisfied when all the tables are broken into as many possible 
+in order to avoid redundancy.
+- 5NF is also known as Poject-Join normal form (PJ/NF)
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Integrity Constraints
+---------------------------------
+- Inegrity constraints are a set of rules, It is used to maintain the quality of 
+information.
+- Integroty constraints ensre that the data insertion, updating and other processes
+have to be perfomed in such a way that data integrity is not affected.
+- Thus, Integrity constraints is used to guard against accidental damage to the
+database.
+
+1. Domain constraints
+2. Entity Integrity Constraint
+3. Referential Integrity Constraint
+4. Key Constraints
+
+Domain Constraint
+----------------------------
+1. domain constraints can be defined as the defination of a valid set of an 
+attribute.
+2. The datatype domain includes string, Carecter, Integer,Time,Date currency
+etc.......
+
+ID (int)   Name (char)       Semester(varchar)      Age(int)
+1000        Sachin             1st                    		27
+1001        John                2nd                  		24
+1002        Kathrine          5th                   		26
+1003       Adam                4th                   A(Charecter) ----> Not allowed  because
+					       Age an Integer Attribute
+
+2. Entity Integrity Constraint
+-------------------------------------------------
+
+Emp_Id not null primary key, 
+<I have to enter info> 
+if i leave this blank -------> Not Allowed as Primary key can't contain a Null Value.
+ID (int)   Name (char)       Semester(varchar)      Age(int)
+1000        Sachin             1st                    		27
+1001        John                2nd                  		24
+1002        Kathrine          5th                   		26
+	Adam                4th                   A(Charecter) ----> Not allowed  because
+					       Age an Integer Attribute
+
+3. Referential Integrity Constraint
+-----------------------------------------------------
+Foreign Key ----> this will be specifoied between two tables.
+-- If a foriegn ket in table 1 refers to the primary key
+of the table2, then every value of the foreign key in table1
+must be null or be avaibale in table 2
+
+table 1:
+-------------
+emp_id       Name      Age
+1                Jack          24   , Primary Key
+2                Sachin       27
+3                Rohit        25
+4                Shewag      26
+
+table 2:
+--------------
+emp_id        location
+1                 NewJersey
+2                 Bangalore
+3                 Mumbai
+4                 Dehli
+
+4. Key Constraints
+---------------------------------
+emp_id       Name      Age
+1                Jack          24   , Primary Key
+2                Sachin       27
+3                Rohit        25
+4                Shewag      26
+4
+3
+2 ----> Not allowed, all row must be unique.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

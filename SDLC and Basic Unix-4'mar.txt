@@ -1,0 +1,268 @@
+SDLC
+----------
+Software developement Life Cycle
+
+-- Desktop Application
+-- Web applcation
+
+terms and conditions
+
+Amazon
+
+---> signIn ---> gmail password ---> google server
+amazon database server----> google database server
+matching ---> logged in >>> program --> code 
+
+Amazon ---> view ---> select  --> buy --> payment --> bank server
+confirmation ---> 
+
+program ---> code
+
+--------------> SDLC 
+
+SDLC --> is a process used by the software industry to design,
+develop high quality software.
+The SDLC aims to produce a high quality software that meets
+or exceeds customer expections, reaches completion within
+times and cost estimates.
+
+SDLC - Models 
+1. Waterfall model
+WaterFall ----> upward to downward --> up to down -- top to bottom
+
+Waterfall model was first SDLC model to be used widely in 
+Sotware Engineering to ensure success of the project.
+
+in "The waterfall " approach the whole process of software 
+development is divided into separate phrases. 
+
+1) Requirement Gathering and Analysis
+--------> Documented 
+2) System Design
+--------->  gathering hardware and software info
+3) Implementatiion
+--------> Gathered info should be put into the code
+Note: The code should be standard one.
+4) Testing
+--------> soiftware designed and developed needs to tested
+5) Deployement 
+------> With the quality of software we could deploy it
+6) Maintaince
+----------------------
+-----> Maintain the software for its working !!!!!!
+
+2) Waterwall model - Application
+---------------------------------------------------------
+-- Requirement are very well documented, clear and fixed 
+-- Product Defination Stable
+-- Technology is understood is not dynamic
+-- There are no ambigious requirements
+-- Ample resources with required expertise are available
+   to support the product
+-- The project is short.
+3) Advantages
+-------------------------
+-- Simple and easy to understand and usage
+-- Easy to manage to the rigidity of the model.
+-- Phrases are processed and completed at once.
+-- Works well for smaller projects
+-- Clearly desined stages
+-- well understood milestones
+-- easy to arrange the task
+
+4) Dis-advantages
+------------------------------
+-- No working softwate is produced until late during the 
+life cycle
+-- High amount of risk and uncertainty
+-- Not a good model for complex and objected projects
+-- Poor model for long and ongoing Project
+-- It is difficult to measire progess within stages
+-- Can not accomodate changing requirements.
+
+
+2) Agile-Scrum Model
+------------------------------------
+Agile Model 
+-------------------
+Agile SDLC 
+------------> is module of combination of iterative and 
+incremental process, (Counting --- Increasing) --> loops
+which focus on process adaptability and customer satisfaction.
+
+-- This is responsible for Rapid delivery of working software.
+
+-- Areas of Agile
+1) Planning
+2) Requirement Ananlysis
+3) Desining
+4) Coding
+5) Unit Testing 
+6) Acceptance Testing
+
+--> Agile model is describes that every project to be handled
+differently an the existing methods needs to toilered to the best
+requirements.
+
+-- Architecture of the Agile Method
+---------------------------------------------------------
+ 
+Agile Methodologies/prncliple
+--------------------------------------------------
+1) Individuals and Interactions: In agile development, 
+self orgnisation and motivation are important, as are 
+interactions like co-location and pair programming.
+
+2) Working Sofware: Demo working software is considered 
+the means of communication with the customers to understand
+their requirements, instead of just depending on documentation.
+
+3) Customer Collaboration: As the requirements cannot be 
+gathered completely in the beginning of the project, due to various
+factors, we continue communicating the customer in seeking
+proper product requirements.
+
+4) Responding to the change: Agile development is focused on 
+quck responses to change and continuous development.
+
+Advantages of Agile module:
+---------------------- 
+1) Is a veru realistic approach to doftware evelopement
+2) Promotes the team work and cross traning
+3) Functionality can be developed rapidly and demostrated
+4) Resource requirement are minimum
+5) Delivers early partial working solutions
+6) Easy to manage
+7) Gives the flexibility to developers
+
+Disadvantages:
+-------------------------
+---- Not suitable for handling complex dependencies
+---- More risk of sustainability, maintainability and extensibility.
+----An overall plan, an agile leader and agile PM pratice is a must  without
+which it will not work 
+--- Highly depended on individual work.
+
+------------------------------------------------------------------------------------------------------------------
+Basic Structure of Unix 
+---------------------------------
+Unix : The Unix Operating system (OS) 
+consists of a Kernal Layer, a shell layer, and a untilities and application layers.
+
+These are used for 
+1) Portable, Multiuser, Multitasking Operating Systems.
+
+
+Linux  					Unix
+The Source code of linux us freely                  The Source code of unix is not really
+avaiable to its user                                          freely available general public
+
+It has graphical user user interface                  It has only Command Line Interface
+along with CLI (Command Line Interface 
+
+Linux OS is portable, Flexible, and can be          Unix OS is not Portable 
+executed in different harddrives
+
+Different versions of Linux OS are Ubuntu,       Different versions of Unix are
+Linux Mint, Redhat Enterprise linux, Solaris       IBM AIS, HP-UX, BSD,Irix,macOS, Darwin etc
+ets
+-----------------------------------------------------------------------------------------------------------------------------
+Basic Unix Commands
+--------------------------------
+We need to launch the terminal (Command Prompt)
+RedHat@Desktop> : System Path 
+system path> 
+
+Unix  Files Commands
+---------------------------------------
+1) ls ------> Lists your files of the system
+2) ls -l  ------> Lists your files in the long format, Which contains 
+                     Exact size of thefile, Who owns the file and who has 
+                     right access to look at it., and when it was modified
+3) ls -a : Lists all files, including the ones whose filenames begins in .dot (. hidden)
+these files will been seen always
+4) mv --> (move) --> 
+syntax:
+mv filename1 filename2 --> Moves a file (i.e gives it a different name)
+ex:
+mv sachin.txt DBMS 
+5) cp (copy) 
+syntax
+cp filename1 filename2 --> Copies the files
+6) rm (remove) 
+syntax:
+rm filename ----> Removes a file.
+7) rm -i ---> remove ---> this will ask for a confirmation that you 
+wanted to remove the file.
+8) wc (count) ----> Tells you how many lines,words and charecters there are in a file.
+9) chmod (permissions) : lets you chage the read, write and execute permissions
+
+2) Unix Directory Commands : folders
+-------------------------------------------------------
+1) mkdir (make directory) : make a new directory.
+2) cd ( change directory -- Name) : Change directory.
+3) pwd (present working directory) : Tells you where you current are
+
+3) Finding things
+-----------------------------
+1) ff - find files, anywhere on the system.
+This is extremy usefull, when you have
+forgotten the directory that you put a file.
+
+2) ff -p : You don't even need the fullname,
+starting letter. this will be usefull for finding
+other things on the system.
+3) grep string filename(s)
+looks for the string in the file. 
+-- this can be useful a lot of purposes.
+
+4) About other people
+-------------------------------
+1) w - tells you who's logged in, What they 
+are doing in. 
+2) who :- tells you who's logged on, and where
+they are coming from.
+usefull if you are looking for some one 
+who's actually physically in the same system
+path. 
+
+3) talk username : lets you have a (typed)
+conversation with another user
+4)  write username: Lets you exchange 
+one-line message with another user
+
+Other Unix Commands
+=--------------------------------
+1) whoami -- returns you username,
+2) passwd --- Lets you change your password 
+
+passwd **************
+
+3) ps -u yourusername :- lets you processess, 
+contains lot of information about them. 
+
+ps -u codingmachine : hit enter 
+
+4) kill PID --- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
